@@ -29,6 +29,16 @@ firewall-cmd --permanent --remove-port=8080/tcp
 firewall-cmd --reload
 #查看端口使用
 netstat -an | grep 2375
+
+
+
+#时间
+
+# timedatectl list-timezones # 列出所有时区
+# timedatectl set-local-rtc 1 # 将硬件时钟调整为与本地时钟一致, 0 为设置为 UTC 时间
+# timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海
+#其实不考虑各个发行版的差异化, 从更底层出发的话, 修改时间时区比想象中要简单:
+# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ~~~
 
 ## 任务计划
